@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Liste des articles à acheter</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <% for (let i = 0; i < items.lenght; i++) { %> 
+            <% if (items[i].paid) { %> 
+                <p class="paid"><% items[i].name %> <% items[i].count %></p>
+            <% } else { %> 
+                <p><% items[i].name %> <% items[i].count %></p>
+                <button onclick="window.location.href = '/items/delete/<% i %>'"></button>
+                <button onclick="window.location.href = '/items/paid/<% i %>'"></button>
+            <% } %> 
+        <% } %> 
+        <button type="submit" name="add" class="checked">Ajouter un article</button>
+    </body>
+</html>
